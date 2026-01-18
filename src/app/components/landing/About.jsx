@@ -33,7 +33,7 @@ const About = () => {
           <div className="relative rounded-2xl overflow-hidden bg-linear-to-br from-slate-800/80 to-slate-900/80 border border-slate-700/50 p-8 lg:p-10 backdrop-blur-sm">
             <div className="absolute inset-0 bg-linear-to-br from-blue-500/5 to-purple-500/5"></div>
             <div className="absolute top-0 right-0 w-64 h-64 bg-blue-500/5 rounded-full blur-3xl"></div>
-            
+
             <div className="relative z-10">
               <div className="absolute -left-8 lg:-left-10 top-0 bottom-0 w-1 bg-linear-to-b from-blue-500 via-cyan-500 to-transparent rounded-full"></div>
 
@@ -60,25 +60,25 @@ const About = () => {
           <h3 className="text-3xl font-bold text-white text-center mb-12">Nuestros Valores</h3>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <ValuesCard 
+            <ValuesCard
+              icon="🤝"
+              title="Atención y compromiso"
+              description="Comunicación clara, responsabilidad en cada etapa y un trato cercano con el cliente."
+            />
+            <ValuesCard
               icon="🎯"
               title="Enfoque en resultados"
               description="Cada línea de código tiene un propósito claro: hacer crecer tu negocio."
             />
-            <ValuesCard 
-              icon="⚡"
-              title="Velocidad y calidad"
-              description="Desarrollamos rápido sin sacrificar la excelencia técnica."
+            <ValuesCard
+              icon="🧠"
+              title="Soluciones inteligentes"
+              description="Analizamos cada proyecto para construir soluciones eficientes y bien pensadas."
             />
-            <ValuesCard 
-              icon="🤝"
-              title="Colaboración real"
-              description="No somos proveedores, somos tu equipo técnico de confianza."
-            />
-            <ValuesCard 
-              icon="🚀"
-              title="Innovación constante"
-              description="Siempre al día con las últimas tecnologías y mejores prácticas."
+            <ValuesCard
+              icon="🛠️"
+              title="Soporte confiable"
+              description="Acompañamiento técnico antes, durante y después de la entrega del proyecto."
             />
           </div>
         </div>
