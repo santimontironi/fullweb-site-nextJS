@@ -1,28 +1,30 @@
 import Image from "next/image"
+import Header from "../ui/Header"
 
 const Home = () => {
   return (
+    <>
+      <Header/>
+    
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Subtle background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl"></div>
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl"></div>
       </div>
 
-      {/* Grid pattern overlay */}
+
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.03)_1px,transparent_1px)] bg-[size:64px_64px]"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left content */}
+
           <div className="text-center lg:text-left space-y-8">
-            {/* Badge */}
+
             <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-500/10 border border-blue-500/20 rounded-full">
               <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
               <span className="text-sm font-medium text-blue-300">Innovación en cada línea de código</span>
             </div>
 
-            {/* Main heading */}
             <div className="space-y-4">
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold">
                 <span className="block text-white">Transformamos</span>
@@ -35,7 +37,6 @@ const Home = () => {
               </p>
             </div>
 
-            {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
               <button className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-lg transition-all duration-300 hover:from-blue-600 hover:to-cyan-600">
                 Comenzar Proyecto
@@ -63,13 +64,11 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Right content - Logo */}
           <div className="relative hidden lg:flex items-center justify-center">
             <div className="relative">
-              {/* Glow effect behind logo */}
+
               <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-3xl scale-150"></div>
               
-              {/* Logo container */}
               <div className="relative w-96 h-96 flex items-center justify-center">
                 <Image
                   src="/images/logo.png"
@@ -92,6 +91,7 @@ const Home = () => {
         </svg>
       </div>
     </section>
+    </>
   )
 }
 
