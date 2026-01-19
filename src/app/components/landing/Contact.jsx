@@ -1,6 +1,127 @@
+import ContactMethod from "../ui/ContactMethod"
+
 const Contact = () => {
   return (
-    <div>Contact</div>
+    <section
+      id="contacto"
+      className="relative py-20 lg:py-32 overflow-hidden bg-slate-900"
+    >
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-1/4 -left-40 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 -right-40 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-size-[62px_62px]"></div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-center mb-16 lg:mb-20">
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-linear-to-r from-blue-600 via-cyan-500 to-blue-600 rounded-3xl blur-lg opacity-40 group-hover:opacity-60 transition duration-500"></div>
+            <h2 className="relative text-4xl sm:text-5xl lg:text-6xl font-bold px-12 py-6 bg-linear-to-r from-[#0F172B] via-[#1e293b] to-[#0F172B] text-white rounded-2xl shadow-2xl">
+              <span className="bg-linear-to-r from-white via-blue-100 to-white text-transparent bg-clip-text">
+                Hablemos de tu proyecto
+              </span>
+            </h2>
+          </div>
+        </div>
+
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+          <div className="space-y-8">
+            <div>
+              <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
+                ¿Listo para transformar tu idea en realidad?
+              </h3>
+              <p className="text-lg text-slate-300 leading-relaxed">
+                Estamos aquí para escucharte y ayudarte a construir la solución perfecta para tu negocio. Cuéntanos sobre tu proyecto y te responderemos en menos de 24 horas.
+              </p>
+            </div>
+
+            <div className="space-y-6">
+              <ContactMethod 
+                icon="📧"
+                title="Email"
+                description="contacto@fullweb.com"
+              />
+
+              <ContactMethod 
+                icon="💬"
+                title="WhatsApp"
+                description="+54 9 341 645 9760"
+              />
+
+              <ContactMethod 
+                icon="📍"
+                title="Ubicación"
+                description="Argentina"
+              />
+            </div>
+          </div>
+
+          <div className="relative">
+            <div className="relative rounded-2xl overflow-hidden bg-linear-to-br from-slate-800/80 to-slate-900/80 border border-slate-700/50 p-8 lg:p-10 backdrop-blur-sm">
+              <div className="absolute inset-0 bg-linear-to-br from-blue-500/5 to-purple-500/5"></div>
+
+              <form className="relative z-10 space-y-6">
+                <div>
+                  <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
+                    Nombre completo
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
+                    placeholder="Juan Pérez"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium text-slate-300 mb-2">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
+                    placeholder="juan@ejemplo.com"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="phone" className="block text-sm font-medium text-slate-300 mb-2">
+                    Teléfono
+                  </label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
+                    placeholder="+54 9 11 1234-5678"
+                  />
+                </div>
+
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium text-slate-300 mb-2">
+                    Cuéntanos sobre tu proyecto
+                  </label>
+                  <textarea
+                    id="message"
+                    rows={5}
+                    className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors resize-none"
+                    placeholder="Describe tu proyecto, necesidades y presupuesto estimado..."
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full px-8 py-4 bg-linear-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-lg transition-all duration-300 hover:from-blue-600 hover:to-cyan-600 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105"
+                >
+                  Enviar Mensaje
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   )
 }
 

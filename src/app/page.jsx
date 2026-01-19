@@ -2,6 +2,7 @@ import About from "./components/landing/About"
 import Services from "./components/landing/Services"
 import Home from "./components/landing/Home"
 import Contact from "./components/landing/Contact"
+import Footer from "./components/landing/Footer"
 
 const page = () => {
   return (
@@ -20,6 +21,10 @@ const page = () => {
 
       <section id="contacto">
         <Contact/>
+      </section>
+
+      <section>
+        <Footer/>
       </section>
     </>
   )
