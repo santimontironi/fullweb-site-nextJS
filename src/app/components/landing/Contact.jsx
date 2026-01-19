@@ -52,7 +52,7 @@ const Contact = () => {
               <ContactMethod 
                 icon="📍"
                 title="Ubicación"
-                description="Argentina"
+                description="Santa Fe, Argentina"
               />
             </div>
           </div>

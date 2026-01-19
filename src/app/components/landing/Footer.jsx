@@ -82,13 +82,13 @@ const Footer = () => {
               <li className="flex items-start gap-2">
                 <span className="text-cyan-400 mt-0.5">💬</span>
                 <a href="tel:+5491112345678" className="text-slate-400 hover:text-blue-400 transition-colors">
-                  +54 9 11 1234-5678
+                  +54 9 341 645 9760
                 </a>
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-purple-400 mt-0.5">📍</span>
                 <span className="text-slate-400">
-                  Capitán Bermúdez, Santa Fe
+                  Santa Fe, Argentina
                 </span>
               </li>
             </ul>
@@ -96,18 +96,10 @@ const Footer = () => {
         </div>
 
         <div className="pt-8 border-t border-slate-800/50">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex justify-center items-center gap-4">
             <p className="text-slate-500 text-sm">
               © {new Date().getFullYear()} FullWeb. Todos los derechos reservados.
             </p>
-            <div className="flex gap-6 text-sm">
-              <Link href="#" className="text-slate-500 hover:text-blue-400 transition-colors">
-                Política de Privacidad
-              </Link>
-              <Link href="#" className="text-slate-500 hover:text-blue-400 transition-colors">
-                Términos de Servicio
-              </Link>
-            </div>
           </div>
         </div>
       </div>
