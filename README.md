@@ -8,8 +8,7 @@ Landing page moderna y profesional para mi agencia de desarrollo web, construida
 - **Totalmente Responsive**: Optimizado para mobile, tablet y desktop
 - **Animaciones Suaves**: Transiciones y efectos hover en toda la página
 - **SEO Optimizado**: Estructura semántica y meta tags configurados
-- **Performance**: Carga rápida con Next.js 14 y optimización de imágenes
-- **Dark Theme**: Esquema de colores oscuro profesional con acentos azul/cyan
+- **Performance**: Carga rápida con Next.js 16 y optimización de imágenes
 
 ## 🛠️ Tecnologías
 
