@@ -25,7 +25,7 @@ const About = () => {
           </h2>
 
           <p className="text-lg lg:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Un emprendimiento de desarrollo web enfocado en transformar ideas en soluciones digitales bien pensadas, funcionales y orientadas a resultados.
+            Una agencia de desarrollo de software enfocada en transformar ideas en soluciones digitales bien pensadas, funcionales y orientadas a resultados.
           </p>
         </div>
 

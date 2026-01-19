@@ -1,4 +1,4 @@
-const ContactMethod = ({ icon, title, description, bgColor, borderColor }) => {
+const ContactMethod = ({ icon, title, description }) => {
   return (
     <div className="flex items-start gap-4">
       <div className="w-12 h-12 flex items-center justify-center rounded-lg bg-blue-500/10 border border-blue-500/20">
