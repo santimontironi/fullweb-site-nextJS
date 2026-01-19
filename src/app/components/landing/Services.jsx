@@ -4,14 +4,14 @@ const Services = () => {
   return (
     <section
       id="servicios"
-      className="relative py-20 lg:py-32 overflow-hidden bg-white"
+      className="relative py-20 lg:py-32 overflow-hidden bg-slate-900"
     >
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/3 -right-40 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/3 -left-40 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(59,130,246,.15)_1px,transparent_1px),linear-gradient(90deg,rgba(59,130,246,.15)_1px,transparent_1px)] bg-size-[62px_62px]"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-size-[62px_62px]"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-center mb-16 lg:mb-20">
