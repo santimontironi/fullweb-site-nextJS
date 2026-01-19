@@ -3,18 +3,72 @@
 import ContactMethod from "../ui/ContactMethod"
 import { useForm } from "react-hook-form"
 import { sendMessageAxios } from "@/service/contactService"
+import Swal from "sweetalert2"
 
 const Contact = () => {
 
-  const {register, handleSubmit, formState:{errors}, reset} = useForm()
+  const { register, handleSubmit, formState: { errors }, reset } = useForm()
 
-  async function formSubmit(data){
-    try{
+  async function formSubmit(data) {
+    Swal.fire({
+      title: 'Enviando mensaje',
+      html: '<div class="animate-pulse">Procesando tu solicitud...</div>',
+      showConfirmButton: false,
+      allowOutsideClick: false,
+      didOpen: () => {
+        Swal.showLoading()
+      },
+      background: '#1e293b',
+      color: '#fff',
+      customClass: {
+        popup: 'rounded-2xl border border-slate-700',
+        title: 'text-2xl font-bold',
+        htmlContainer: 'text-slate-300'
+      }
+    })
+    try {
       await sendMessageAxios(data)
+      Swal.fire({
+        title: '¡Mensaje enviado!',
+        html: '<p class="text-lg">Te responderemos en menos de 24 horas 🚀</p>',
+        icon: 'success',
+        showConfirmButton: true,
+        confirmButtonText: 'Perfecto',
+        timer: 3000,
+        timerProgressBar: true,
+        background: '#1e293b',
+        color: '#fff',
+        iconColor: '#22c55e',
+        confirmButtonColor: '#3b82f6',
+        customClass: {
+          popup: 'rounded-2xl border border-slate-700 shadow-2xl',
+          title: 'text-2xl font-bold bg-gradient-to-r from-white via-blue-100 to-white bg-clip-text text-transparent',
+          htmlContainer: 'text-slate-300',
+          confirmButton: 'rounded-lg px-6 py-3 font-semibold hover:scale-105 transition-transform',
+          timerProgressBar: 'bg-gradient-to-r from-blue-500 to-cyan-500'
+        }
+      })
       reset()
     }
-    catch(error){
-      if(error.response?.data?.message){
+    catch (error) {
+      Swal.fire({
+        title: '¡Ups! Algo salió mal',
+        html: '<p class="text-lg">No pudimos enviar tu mensaje. Por favor, intenta nuevamente.</p>',
+        icon: 'error',
+        showConfirmButton: true,
+        confirmButtonText: 'Reintentar',
+        background: '#1e293b',
+        color: '#fff',
+        iconColor: '#ef4444',
+        confirmButtonColor: '#3b82f6',
+        customClass: {
+          popup: 'rounded-2xl border border-slate-700 shadow-2xl',
+          title: 'text-2xl font-bold',
+          htmlContainer: 'text-slate-300',
+          confirmButton: 'rounded-lg px-6 py-3 font-semibold hover:scale-105 transition-transform'
+        }
+      })
+      if (error.response?.data?.message) {
         console.log(error.response.data.message)
       }
     }
@@ -56,22 +110,28 @@ const Contact = () => {
             </div>
 
             <div className="space-y-6">
-              <ContactMethod 
+              <ContactMethod
                 icon="https://img.icons8.com/?size=100&id=P7UIlhbpWzZm&format=png&color=000000"
                 title="Email"
                 description="fullwebcontacto@gmail.com"
               />
 
-              <ContactMethod 
+              <ContactMethod
                 icon="https://img.icons8.com/?size=100&id=16713&format=png&color=000000"
                 title="WhatsApp"
                 description="+54 9 341 645 9760"
               />
 
-              <ContactMethod 
+              <ContactMethod
                 icon="https://img.icons8.com/?size=100&id=uzeKRJIGwbBY&format=png&color=000000"
                 title="Ubicación"
                 description="Santa Fe, Argentina"
+              />
+
+              <ContactMethod
+                icon="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png&color=000000"
+                title="Instagram"
+                description="fullweb_"
               />
             </div>
           </div>
@@ -88,8 +148,9 @@ const Contact = () => {
                   <input
                     type="text"
                     id="name"
+                    placeholder="Ingresa tu nombre"
                     className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
-                    {...register('name', {required: true})}
+                    {...register('name', { required: true })}
                   />
                   {errors.name && <span className="text-red-500 text-sm">El nombre es requerido</span>}
                 </div>
@@ -101,10 +162,11 @@ const Contact = () => {
                   <input
                     type="text"
                     id="surname"
+                    placeholder="Ingresa tu apellido"
                     className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
-                    {...register('surname', {required: true})}
-                    />
-                    {errors.surname && <span className="text-red-500 text-sm">El apellido es requerido</span>}
+                    {...register('surname', { required: true })}
+                  />
+                  {errors.surname && <span className="text-red-500 text-sm">El apellido es requerido</span>}
                 </div>
 
                 <div>
@@ -114,10 +176,11 @@ const Contact = () => {
                   <input
                     type="email"
                     id="email"
+                    placeholder="Ingresa tu correo electrônico"
                     className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
-                    {...register('email', {required: true})}
-                    />
-                    {errors.email && <span className="text-red-500 text-sm">El correo electrónico es requerido</span>}
+                    {...register('email', { required: true })}
+                  />
+                  {errors.email && <span className="text-red-500 text-sm">El correo electrónico es requerido</span>}
                 </div>
 
                 <div>
@@ -127,10 +190,11 @@ const Contact = () => {
                   <input
                     type="tel"
                     id="phone"
+                    placeholder="Ingresa tu teléfono"
                     className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
-                    {...register('phone', {required: true})}
-                    />
-                    {errors.phone && <span className="text-red-500 text-sm">El teléfono es requerido</span>}
+                    {...register('phone', { required: true })}
+                  />
+                  {errors.phone && <span className="text-red-500 text-sm">El teléfono es requerido</span>}
                 </div>
 
                 <div>
@@ -142,9 +206,9 @@ const Contact = () => {
                     rows={5}
                     className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors resize-none"
                     placeholder="Describe tu proyecto, necesidades y presupuesto estimado..."
-                    {...register('message', {required: true})}
-                    ></textarea>
-                    {errors.message && <span className="text-red-500 text-sm">El mensaje es requerido</span>}
+                    {...register('message', { required: true })}
+                  ></textarea>
+                  {errors.message && <span className="text-red-500 text-sm">El mensaje es requerido</span>}
                 </div>
 
                 <button

@@ -70,6 +70,11 @@ const Home = () => {
         </div>
       </div>
 
+      <a className="z-50 underline-0" href="https://wa.me/+5493416459760?text=Hola%2C%20quiero%20más%20información">
+        <div className="fixed bottom-5 right-5 xl:right-10 xl:bottom-10 xl:w-20 xl:h-20 w-12 h-12 flex items-center justify-center cursor-pointer transform transale-y-0 hover:-translate-y-2 transition-all duration-300">
+          <img src="https://img.icons8.com/?size=100&id=DUEq8l5qTqBE&format=png&color=000000" alt="icon whatsapp" />
+        </div>
+      </a>
     </section>
   )
 }

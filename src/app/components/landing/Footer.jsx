@@ -12,9 +12,9 @@ const Footer = () => {
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-size-[62px_62px]"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
+        <div className="grid grid-cols-1 text-center md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-12">
           
-          <div className="space-y-4">
+          <div className="space-y-4 flex justify-center items-center flex-col">
             <Link href="/" className="flex items-center gap-3 group w-fit">
               <div className="relative w-10 h-10">
                 <Image
@@ -72,20 +72,20 @@ const Footer = () => {
 
           <div>
             <h3 className="text-white font-semibold mb-4">Contacto</h3>
-            <ul className="space-y-3 text-sm">
-              <li className="flex items-start gap-2">
+            <ul className="space-y-3 flex flex-col items-center text-sm">
+              <li className="gap-2">
                 <span className="text-blue-400 mt-0.5">📧</span>
                 <a href="mailto:contacto@fullweb.com" className="text-slate-400 hover:text-blue-400 transition-colors">
-                  contacto@fullweb.com
+                  fullwebcontacto@gmail.com
                 </a>
               </li>
-              <li className="flex items-start gap-2">
+              <li className="gap-2">
                 <span className="text-cyan-400 mt-0.5">💬</span>
                 <a href="tel:+5491112345678" className="text-slate-400 hover:text-blue-400 transition-colors">
                   +54 9 341 645 9760
                 </a>
               </li>
-              <li className="flex items-start gap-2">
+              <li className="gap-2">
                 <span className="text-purple-400 mt-0.5">📍</span>
                 <span className="text-slate-400">
                   Santa Fe, Argentina
