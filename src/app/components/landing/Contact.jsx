@@ -57,19 +57,19 @@ const Contact = () => {
 
             <div className="space-y-6">
               <ContactMethod 
-                icon="📧"
+                icon="https://img.icons8.com/?size=100&id=P7UIlhbpWzZm&format=png&color=000000"
                 title="Email"
-                description="contacto@fullweb.com"
+                description="fullwebcontacto@gmail.com"
               />
 
               <ContactMethod 
-                icon="💬"
+                icon="https://img.icons8.com/?size=100&id=16713&format=png&color=000000"
                 title="WhatsApp"
                 description="+54 9 341 645 9760"
               />
 
               <ContactMethod 
-                icon="📍"
+                icon="https://img.icons8.com/?size=100&id=uzeKRJIGwbBY&format=png&color=000000"
                 title="Ubicación"
                 description="Santa Fe, Argentina"
               />
