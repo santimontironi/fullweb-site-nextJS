@@ -123,15 +123,15 @@ const Contact = () => {
               />
 
               <ContactMethod
-                icon="https://img.icons8.com/?size=100&id=uzeKRJIGwbBY&format=png&color=000000"
-                title="Ubicación"
-                description="Santa Fe, Argentina"
-              />
-
-              <ContactMethod
                 icon="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png&color=000000"
                 title="Instagram"
                 description="fullweb_"
+              />
+
+              <ContactMethod
+                icon="https://img.icons8.com/?size=100&id=uzeKRJIGwbBY&format=png&color=000000"
+                title="Ubicación"
+                description="Santa Fe, Argentina"
               />
             </div>
           </div>

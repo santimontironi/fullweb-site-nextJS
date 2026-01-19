@@ -73,22 +73,22 @@ const Footer = () => {
           <div>
             <h3 className="text-white font-semibold mb-4">Contacto</h3>
             <ul className="space-y-3 flex flex-col items-center text-sm">
-              <li className="gap-2">
-                <span className="text-blue-400 mt-0.5">📧</span>
+              <li className="gap-2 flex">
+                <img className="w-5 h-5" src="https://img.icons8.com/?size=100&id=P7UIlhbpWzZm&format=png&color=000000" alt="Email Icon" />
                 <a href="mailto:contacto@fullweb.com" className="text-slate-400 hover:text-blue-400 transition-colors">
                   fullwebcontacto@gmail.com
                 </a>
               </li>
-              <li className="gap-2">
-                <span className="text-cyan-400 mt-0.5">💬</span>
+              <li className="gap-2 flex">
+                <img className="w-5 h-5" src="https://img.icons8.com/?size=100&id=16713&format=png&color=000000" alt="Whatsapp Icon" />
                 <a href="tel:+5491112345678" className="text-slate-400 hover:text-blue-400 transition-colors">
                   +54 9 341 645 9760
                 </a>
               </li>
-              <li className="gap-2">
-                <span className="text-purple-400 mt-0.5">📍</span>
+              <li className="gap-2 flex">
+                <img className="w-5 h-5" src="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png&color=000000" alt="Instagram Icon" />
                 <span className="text-slate-400">
-                  Santa Fe, Argentina
+                  fullweb_
                 </span>
               </li>
             </ul>
