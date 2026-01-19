@@ -19,13 +19,13 @@ const About = () => {
         <div className="text-center mb-16 lg:mb-24">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
             <span className="block text-white mb-2">Construimos el futuro</span>
-            <span className="block bg-linear-to-r from-blue-400 via-cyan-400 to-purple-400 text-transparent bg-clip-text">
+            <span className="bg-linear-to-r from-blue-400 via-cyan-400 to-purple-400 text-transparent bg-clip-text">
               Una línea de código a la vez
             </span>
           </h2>
 
           <p className="text-lg lg:text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Somos un equipo apasionado de desarrolladores y diseñadores que transforman ideas complejas en soluciones digitales simples, elegantes y potentes.
+            Un emprendimiento de desarrollo web enfocado en transformar ideas en soluciones digitales bien pensadas, funcionales y orientadas a resultados.
           </p>
         </div>
 
@@ -44,6 +44,8 @@ const About = () => {
                     Comenzamos con una visión simple: crear software que realmente importa. No se trata solo de código bonito o interfaces llamativas, se trata de construir herramientas que resuelven problemas reales y generan impacto tangible en los negocios de nuestros clientes.
                   </p>
                 </div>
+
+                <div className="w-full border-t-5 border-slate-700/80"></div>
 
                 <div>
                   <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">Nuestra Filosofía</h3>
