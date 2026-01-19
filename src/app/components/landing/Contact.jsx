@@ -1,6 +1,25 @@
+"use client"
+
 import ContactMethod from "../ui/ContactMethod"
+import { useForm } from "react-hook-form"
+import { sendMessageAxios } from "@/service/contactService"
 
 const Contact = () => {
+
+  const {register, handleSubmit, formState:{errors}, reset} = useForm()
+
+  async function formSubmit(data){
+    try{
+      await sendMessageAxios(data)
+      reset()
+    }
+    catch(error){
+      if(error.response?.data?.message){
+        console.log(error.response.data.message)
+      }
+    }
+  }
+
   return (
     <section
       id="contacto"
@@ -61,17 +80,31 @@ const Contact = () => {
             <div className="relative rounded-2xl overflow-hidden bg-linear-to-br from-slate-800/80 to-slate-900/80 border border-slate-700/50 p-8 lg:p-10 backdrop-blur-sm">
               <div className="absolute inset-0 bg-linear-to-br from-blue-500/5 to-purple-500/5"></div>
 
-              <form className="relative z-10 space-y-6">
+              <form className="relative z-10 space-y-6" onSubmit={handleSubmit(formSubmit)}>
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-slate-300 mb-2">
-                    Nombre completo
+                    Nombre
                   </label>
                   <input
                     type="text"
                     id="name"
                     className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
-                    placeholder="Juan Pérez"
+                    {...register('name', {required: true})}
                   />
+                  {errors.name && <span className="text-red-500 text-sm">El nombre es requerido</span>}
+                </div>
+
+                <div>
+                  <label htmlFor="surname" className="block text-sm font-medium text-slate-300 mb-2">
+                    Apellido
+                  </label>
+                  <input
+                    type="text"
+                    id="surname"
+                    className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
+                    {...register('surname', {required: true})}
+                    />
+                    {errors.surname && <span className="text-red-500 text-sm">El apellido es requerido</span>}
                 </div>
 
                 <div>
@@ -82,8 +115,9 @@ const Contact = () => {
                     type="email"
                     id="email"
                     className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
-                    placeholder="juan@ejemplo.com"
-                  />
+                    {...register('email', {required: true})}
+                    />
+                    {errors.email && <span className="text-red-500 text-sm">El correo electrónico es requerido</span>}
                 </div>
 
                 <div>
@@ -94,8 +128,9 @@ const Contact = () => {
                     type="tel"
                     id="phone"
                     className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
-                    placeholder="+54 9 11 1234-5678"
-                  />
+                    {...register('phone', {required: true})}
+                    />
+                    {errors.phone && <span className="text-red-500 text-sm">El teléfono es requerido</span>}
                 </div>
 
                 <div>
@@ -107,12 +142,14 @@ const Contact = () => {
                     rows={5}
                     className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors resize-none"
                     placeholder="Describe tu proyecto, necesidades y presupuesto estimado..."
-                  ></textarea>
+                    {...register('message', {required: true})}
+                    ></textarea>
+                    {errors.message && <span className="text-red-500 text-sm">El mensaje es requerido</span>}
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full px-8 py-4 bg-linear-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-lg transition-all duration-300 hover:from-blue-600 hover:to-cyan-600 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105"
+                  className="w-full px-8 py-4 bg-linear-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-lg transition-all duration-300 hover:from-blue-600 hover:to-cyan-600 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105 cursor-pointer"
                 >
                   Enviar Mensaje
                 </button>
