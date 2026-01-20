@@ -4,11 +4,22 @@ import ContactMethod from "../ui/ContactMethod"
 import { useForm } from "react-hook-form"
 import { sendMessageAxios } from "@/service/contactService"
 import Swal from "sweetalert2"
-import { motion } from "framer-motion"
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import { useEffect } from "react"
 
 const Contact = () => {
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm()
+
+  useEffect(() => {
+    AOS.init({
+      duration: 600,
+      once: true,
+      easing: 'ease-out',
+      offset: 100
+    })
+  }, [])
 
   async function formSubmit(data) {
     Swal.fire({
@@ -100,11 +111,8 @@ const Contact = () => {
         </div>
 
         <motion.div
-          style={{ willChange: 'transform, opacity' }}
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true, amount: 0.3 }} className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+          data-aos="fade-up"
+          data-aos-delay="100" className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           <div className="space-y-8">
             <div>
               <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">

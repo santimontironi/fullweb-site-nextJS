@@ -1,9 +1,21 @@
 "use client"
 
 import ServiceCard from "../ui/ServiceCard"
-import { motion } from "framer-motion"
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import { useEffect } from "react"
 
 const Services = () => {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 600,
+      once: true,
+      easing: 'ease-out',
+      offset: 100
+    })
+  }, [])
+
   return (
     <section
       id="servicios"
@@ -28,12 +40,9 @@ const Services = () => {
           </div>
         </div>
 
-        <motion.div
-          style={{ willChange: 'transform, opacity' }}
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true, amount: 0.3 }} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          data-aos="fade-up"
+          data-aos-delay="100" className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <ServiceCard
             icon="🌐"
             title="Desarrollo Web"
@@ -75,7 +84,7 @@ const Services = () => {
             description="Soporte técnico continuo, actualizaciones de seguridad, optimización de rendimiento y nuevas funcionalidades."
             features={["Soporte 24/7", "Updates", "Backup automático"]}
           />
-        </motion.div>
+        </div>
       </div>
     </section>
   )
