@@ -18,11 +18,7 @@ const About = () => {
   }, [])
 
   return (
-    <section data-aos="zoom-in"
-      data-aos-delay="100"
-      id="nosotros"
-      className="relative py-20 lg:py-32 overflow-hidden bg-slate-900"
-    >
+    <section id="nosotros" className="relative py-20 lg:py-32 overflow-hidden bg-slate-900">
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 -left-40 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl"></div>
         <div className="absolute bottom-1/4 -right-40 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl"></div>
@@ -30,7 +26,7 @@ const About = () => {
 
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-size-[62px_62px]"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div data-aos="zoom-in" data-aos-delay="100" className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 lg:mb-24">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
             <span className="block text-white mb-2">Construimos el futuro</span>
