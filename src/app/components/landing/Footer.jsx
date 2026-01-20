@@ -20,8 +20,7 @@ const Footer = () => {
                 <Image
                   src="/images/logo.png"
                   alt="FullWeb Logo"
-                  width={40}
-                  height={40}
+                  fill
                   className="object-contain transition-transform duration-300 group-hover:scale-110"
                 />
               </div>
