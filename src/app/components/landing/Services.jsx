@@ -29,6 +29,7 @@ const Services = () => {
         </div>
 
         <motion.div
+          style={{ willChange: 'transform, opacity' }}
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
