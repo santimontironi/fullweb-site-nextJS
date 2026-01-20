@@ -103,7 +103,7 @@ const Contact = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          viewport={{ once: false, amount: 0.3 }} className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+          viewport={{ once: true, amount: 0.3 }} className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           <div className="space-y-8">
             <div>
               <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
