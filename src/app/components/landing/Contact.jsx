@@ -110,7 +110,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <motion.div
+        <div
           data-aos="fade-up"
           data-aos-delay="100" className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           <div className="space-y-8">
@@ -237,7 +237,7 @@ const Contact = () => {
               </form>
             </div>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   )
