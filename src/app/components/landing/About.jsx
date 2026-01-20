@@ -2,9 +2,20 @@
 
 import ValuesCard from "../ui/ValuesCard"
 import Link from "next/link"
-import { motion } from "framer-motion"
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+import { useEffect } from "react"
 
 const About = () => {
+
+  useEffect(() => {
+    AOS.init({
+      duration: 600,    
+      once: true,         
+      easing: 'ease-out',  
+      offset: 100        
+    })
+  }, [])
 
   return (
     <section
@@ -18,12 +29,7 @@ const About = () => {
 
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-size-[62px_62px]"></div>
 
-      <motion.div
-        style={{ willChange: 'transform, opacity' }}
-        initial={{ opacity: 0, y: 50 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true, amount: 0.3 }} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 lg:mb-24">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
             <span className="block text-white mb-2">Construimos el futuro</span>
@@ -101,7 +107,7 @@ const About = () => {
             Trabajemos Juntos
           </Link>
         </div>
-      </motion.div>
+      </div>
     </section>
   )
 }
