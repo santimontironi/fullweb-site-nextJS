@@ -26,7 +26,7 @@ const About = () => {
 
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-size-[62px_62px]"></div>
 
-      <div data-aos="zoom-in" data-aos-delay="100" className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div data-aos="fade-up" data-aos-delay="100" className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 lg:mb-24">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
             <span className="block text-white mb-2">Construimos el futuro</span>
