@@ -18,7 +18,7 @@ const About = () => {
   }, [])
 
   return (
-    <section data-aos="fade-up"
+    <section data-aos="zoom-in"
       data-aos-delay="100"
       id="nosotros"
       className="relative py-20 lg:py-32 overflow-hidden bg-slate-900"
