@@ -112,17 +112,20 @@ const Contact = () => {
             <div className="space-y-6">
               <ContactMethod
                 icon="https://img.icons8.com/?size=100&id=P7UIlhbpWzZm&format=png&color=000000"
+                url="https://mail.google.com/mail/?view=cm&fs=1&to=fullwebcontacto@gmail.com"
                 title="Email"
                 description="fullwebcontacto@gmail.com"
               />
 
               <ContactMethod
+                url="https://wa.me/+5493416459760?text=Hola%2C%20quiero%20más%20información"
                 icon="https://img.icons8.com/?size=100&id=16713&format=png&color=000000"
                 title="WhatsApp"
                 description="+54 9 341 645 9760"
               />
 
               <ContactMethod
+                url="https://www.instagram.com/fullweb_/"
                 icon="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png&color=000000"
                 title="Instagram"
                 description="fullweb_"
