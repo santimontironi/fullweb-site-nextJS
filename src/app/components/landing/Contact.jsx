@@ -110,10 +110,8 @@ const Contact = () => {
           </div>
         </div>
 
-        <div
-          data-aos="fade-up"
-          data-aos-delay="100" className="grid lg:grid-cols-2 gap-12 lg:gap-16">
-          <div className="space-y-8">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+          <div className="space-y-8" data-aos="fade-right" data-aos-delay="100">
             <div>
               <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
                 ¿Listo para transformar tu idea en realidad?
@@ -153,7 +151,7 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="relative">
+          <div data-aos="fade-left" data-aos-delay="100" className="relative">
             <div className="relative rounded-2xl overflow-hidden bg-linear-to-br from-slate-800/80 to-slate-900/80 border border-slate-700/50 p-8 lg:p-10 backdrop-blur-sm">
               <div className="absolute inset-0 bg-linear-to-br from-blue-500/5 to-purple-500/5"></div>
 

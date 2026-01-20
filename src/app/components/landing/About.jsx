@@ -69,7 +69,7 @@ const About = () => {
           </div>
         </div>
 
-        <div>
+        <div data-aos="fade-up" data-aos-delay="100">
           <h3 className="text-3xl font-bold text-white text-center mb-12">Nuestros Valores</h3>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
