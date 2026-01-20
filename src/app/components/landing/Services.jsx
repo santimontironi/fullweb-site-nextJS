@@ -1,4 +1,7 @@
+"use client"
+
 import ServiceCard from "../ui/ServiceCard"
+import { motion } from "framer-motion"
 
 const Services = () => {
   return (
@@ -25,7 +28,11 @@ const Services = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: false, amount: 0.3 }} className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           <ServiceCard
             icon="🌐"
             title="Desarrollo Web"
@@ -67,7 +74,7 @@ const Services = () => {
             description="Soporte técnico continuo, actualizaciones de seguridad, optimización de rendimiento y nuevas funcionalidades."
             features={["Soporte 24/7", "Updates", "Backup automático"]}
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   )

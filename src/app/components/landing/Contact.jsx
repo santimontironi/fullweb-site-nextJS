@@ -4,6 +4,7 @@ import ContactMethod from "../ui/ContactMethod"
 import { useForm } from "react-hook-form"
 import { sendMessageAxios } from "@/service/contactService"
 import Swal from "sweetalert2"
+import { motion } from "framer-motion"
 
 const Contact = () => {
 
@@ -98,7 +99,11 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: false, amount: 0.3 }} className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           <div className="space-y-8">
             <div>
               <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
@@ -223,7 +228,7 @@ const Contact = () => {
               </form>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )

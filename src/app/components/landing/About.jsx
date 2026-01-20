@@ -1,5 +1,8 @@
+"use client"
+
 import ValuesCard from "../ui/ValuesCard"
 import Link from "next/link"
+import { motion } from "framer-motion"
 
 const About = () => {
 
@@ -15,7 +18,11 @@ const About = () => {
 
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-size-[62px_62px]"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: false, amount: 0.3 }} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 lg:mb-24">
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6">
             <span className="block text-white mb-2">Construimos el futuro</span>
@@ -58,7 +65,10 @@ const About = () => {
           </div>
         </div>
 
-        <div>
+        <motion.div initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: false, amount: 0.3 }}>
           <h3 className="text-3xl font-bold text-white text-center mb-12">Nuestros Valores</h3>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -83,14 +93,14 @@ const About = () => {
               description="Acompañamiento técnico antes, durante y después de la entrega del proyecto."
             />
           </div>
-        </div>
+        </motion.div>
 
         <div className="mt-20 text-center">
           <Link href="/#contacto" className="px-8 py-4 bg-linear-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-lg transition-all duration-300 hover:from-blue-600 hover:to-cyan-600 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105">
             Trabajemos Juntos
           </Link>
         </div>
-      </div>
+      </motion.div>
     </section>
   )
 }

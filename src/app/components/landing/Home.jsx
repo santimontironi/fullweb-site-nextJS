@@ -1,5 +1,8 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
+import { motion } from "framer-motion"
 
 const Home = () => {
   return (
@@ -11,7 +14,11 @@ const Home = () => {
 
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.03)_1px,transparent_1px)] bg-size-[64px_64px]"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: false, amount: 0.3 }} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           <div className="text-center lg:text-left space-y-1 mt-10">
@@ -68,7 +75,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       <a className="z-50 underline-0" href="https://wa.me/+5493416459760?text=Hola%2C%20quiero%20más%20información">
         <div className="fixed bottom-5 right-5 xl:right-10 xl:bottom-10 xl:w-20 xl:h-20 w-12 h-12 flex items-center justify-center cursor-pointer transform transale-y-0 hover:-translate-y-2 transition-all duration-300">
