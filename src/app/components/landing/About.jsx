@@ -10,15 +10,16 @@ const About = () => {
 
   useEffect(() => {
     AOS.init({
-      duration: 600,    
-      once: true,         
-      easing: 'ease-out',  
-      offset: 100        
+      duration: 600,
+      once: true,
+      easing: 'ease-out',
+      offset: 100
     })
   }, [])
 
   return (
-    <section
+    <section data-aos="fade-up"
+      data-aos-delay="100"
       id="nosotros"
       className="relative py-20 lg:py-32 overflow-hidden bg-slate-900"
     >
@@ -72,10 +73,7 @@ const About = () => {
           </div>
         </div>
 
-        <motion.div initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: false, amount: 0.3 }}>
+        <div>
           <h3 className="text-3xl font-bold text-white text-center mb-12">Nuestros Valores</h3>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -100,7 +98,7 @@ const About = () => {
               description="Acompañamiento técnico antes, durante y después de la entrega del proyecto."
             />
           </div>
-        </motion.div>
+        </div>
 
         <div className="mt-20 text-center">
           <Link href="/#contacto" className="px-8 py-4 bg-linear-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-lg transition-all duration-300 hover:from-blue-600 hover:to-cyan-600 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105">
