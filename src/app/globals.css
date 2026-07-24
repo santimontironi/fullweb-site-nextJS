@@ -1,9 +1,11 @@
 @import "tailwindcss";
 
-html{
-    scroll-behavior: smooth;
+/* conecta las fuentes de next/font con las utilidades font-sans / font-mono */
+@theme inline {
+    --font-sans: var(--font-inter);
+    --font-mono: var(--font-jetbrains-mono);
 }
 
-body{
+html {
     scroll-behavior: smooth;
 }

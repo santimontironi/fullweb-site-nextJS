@@ -5,6 +5,10 @@ export const POST = async (request) => {
     try {
         const { name, surname, email, phone, message } = await request.json()
 
+        if(!name || !surname || !email || !phone || !message) {
+            return NextResponse.json({ message: "Todos los campos son obligatorios" }, { status: 400 })
+        }
+
         const mail = {
             from: email,
             to: process.env.EMAIL_USER,

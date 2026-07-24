@@ -1,25 +1,14 @@
 "use client"
 
 import ContactMethod from "../ui/ContactMethod"
+import SectionTitle from "../ui/SectionTitle"
 import { useForm } from "react-hook-form"
 import { sendMessageAxios } from "@/service/contactService"
 import Swal from "sweetalert2"
-import AOS from 'aos'
-import 'aos/dist/aos.css'
-import { useEffect } from "react"
 
 const Contact = () => {
 
   const { register, handleSubmit, formState: { errors }, reset } = useForm()
-
-  useEffect(() => {
-    AOS.init({
-      duration: 600,
-      once: true,
-      easing: 'ease-out',
-      offset: 100
-    })
-  }, [])
 
   async function formSubmit(data) {
     Swal.fire({
@@ -89,7 +78,7 @@ const Contact = () => {
   return (
     <section
       id="contacto"
-      className="relative py-20 lg:py-32 overflow-hidden bg-slate-900"
+      className="relative py-20 md:py-24 xl:py-32 overflow-hidden bg-slate-900"
     >
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 -left-40 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
@@ -98,25 +87,16 @@ const Contact = () => {
 
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.02)_1px,transparent_1px)] bg-size-[62px_62px]"></div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-center mb-16 lg:mb-20">
-          <div className="relative group">
-            <div className="absolute -inset-1 bg-linear-to-r from-blue-600 via-cyan-500 to-blue-600 rounded-3xl blur-lg opacity-40 group-hover:opacity-60 transition duration-500"></div>
-            <h2 className="relative text-4xl sm:text-5xl lg:text-6xl font-bold px-12 py-6 bg-linear-to-r from-[#0F172B] via-[#1e293b] to-[#0F172B] text-white rounded-2xl shadow-2xl">
-              <span className="bg-linear-to-r from-white via-blue-100 to-white text-transparent bg-clip-text">
-                Hablemos de tu proyecto
-              </span>
-            </h2>
-          </div>
-        </div>
+      <div className="relative z-10 max-w-7xl 2xl:max-w-350 mx-auto px-4 md:px-6 xl:px-8">
+        <SectionTitle eyebrow="siguiente paso">Hablemos de tu proyecto</SectionTitle>
 
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
+        <div className="grid xl:grid-cols-2 gap-10 md:gap-12 xl:gap-16">
           <div className="space-y-8" data-aos="fade-right" data-aos-delay="100">
             <div>
-              <h3 className="text-2xl lg:text-3xl font-bold text-white mb-4">
+              <h3 className="text-xl md:text-2xl xl:text-3xl font-bold text-white mb-4 text-balance">
                 ¿Listo para transformar tu idea en realidad?
               </h3>
-              <p className="text-lg text-slate-300 leading-relaxed">
+              <p className="text-base md:text-lg text-slate-300 leading-relaxed text-pretty">
                 Estamos aquí para escucharte y ayudarte a construir la solución perfecta para tu negocio. Cuéntanos sobre tu proyecto y te responderemos en menos de 24 horas.
               </p>
             </div>
@@ -152,7 +132,7 @@ const Contact = () => {
           </div>
 
           <div data-aos="fade-left" data-aos-delay="100" className="relative">
-            <div className="relative rounded-2xl overflow-hidden bg-linear-to-br from-slate-800/80 to-slate-900/80 border border-slate-700/50 p-8 lg:p-10 backdrop-blur-sm">
+            <div className="relative rounded-2xl overflow-hidden bg-linear-to-br from-slate-800/80 to-slate-900/80 border border-slate-700/50 p-6 md:p-8 xl:p-10 backdrop-blur-sm">
               <div className="absolute inset-0 bg-linear-to-br from-blue-500/5 to-purple-500/5"></div>
 
               <form className="relative z-10 space-y-6" onSubmit={handleSubmit(formSubmit)}>
@@ -164,10 +144,10 @@ const Contact = () => {
                     type="text"
                     id="name"
                     placeholder="Ingresa tu nombre"
-                    className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
+                    className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:border-blue-500 focus:outline-2 focus:outline-offset-2 focus:outline-blue-500/60"
                     {...register('name', { required: true })}
                   />
-                  {errors.name && <span className="text-red-500 text-sm">El nombre es requerido</span>}
+                  {errors.name && <span role="alert" className="mt-1 block text-red-400 text-sm">El nombre es requerido</span>}
                 </div>
 
                 <div>
@@ -178,10 +158,10 @@ const Contact = () => {
                     type="text"
                     id="surname"
                     placeholder="Ingresa tu apellido"
-                    className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
+                    className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:border-blue-500 focus:outline-2 focus:outline-offset-2 focus:outline-blue-500/60"
                     {...register('surname', { required: true })}
                   />
-                  {errors.surname && <span className="text-red-500 text-sm">El apellido es requerido</span>}
+                  {errors.surname && <span role="alert" className="mt-1 block text-red-400 text-sm">El apellido es requerido</span>}
                 </div>
 
                 <div>
@@ -192,10 +172,10 @@ const Contact = () => {
                     type="email"
                     id="email"
                     placeholder="Ingresa tu correo electrônico"
-                    className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
+                    className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:border-blue-500 focus:outline-2 focus:outline-offset-2 focus:outline-blue-500/60"
                     {...register('email', { required: true })}
                   />
-                  {errors.email && <span className="text-red-500 text-sm">El correo electrónico es requerido</span>}
+                  {errors.email && <span role="alert" className="mt-1 block text-red-400 text-sm">El correo electrónico es requerido</span>}
                 </div>
 
                 <div>
@@ -206,10 +186,10 @@ const Contact = () => {
                     type="tel"
                     id="phone"
                     placeholder="Ingresa tu teléfono"
-                    className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
+                    className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:border-blue-500 focus:outline-2 focus:outline-offset-2 focus:outline-blue-500/60"
                     {...register('phone', { required: true })}
                   />
-                  {errors.phone && <span className="text-red-500 text-sm">El teléfono es requerido</span>}
+                  {errors.phone && <span role="alert" className="mt-1 block text-red-400 text-sm">El teléfono es requerido</span>}
                 </div>
 
                 <div>
@@ -219,16 +199,16 @@ const Contact = () => {
                   <textarea
                     id="message"
                     rows={5}
-                    className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors resize-none"
+                    className="w-full px-4 py-3 bg-slate-900/50 border border-slate-700 rounded-lg text-white placeholder-slate-500 focus:border-blue-500 focus:outline-2 focus:outline-offset-2 focus:outline-blue-500/60 resize-none"
                     placeholder="Describe tu proyecto, necesidades y presupuesto estimado..."
                     {...register('message', { required: true })}
                   ></textarea>
-                  {errors.message && <span className="text-red-500 text-sm">El mensaje es requerido</span>}
+                  {errors.message && <span role="alert" className="mt-1 block text-red-400 text-sm">El mensaje es requerido</span>}
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full px-8 py-4 bg-linear-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-lg transition-all duration-300 hover:from-blue-600 hover:to-cyan-600 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105 cursor-pointer"
+                  className="w-full px-8 py-4 bg-linear-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-lg transition-all duration-300 hover:from-blue-600 hover:to-cyan-600 hover:shadow-lg hover:shadow-blue-500/50 hover:scale-105 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-blue-400"
                 >
                   Enviar Mensaje
                 </button>
